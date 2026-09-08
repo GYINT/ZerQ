@@ -1,8 +1,8 @@
 ---
-name: ZeroQ
+name: ZerQ
 version: 1.0.1
-display_name: 归零（ZeroQ）
-description: '归零（ZeroQ）质量管理指导 Skill · 4 层级架构（输出/协议/输入/底层）· 严格分离 · 动作阶段主·时间维度子 · 输出层 4 形态 · 场景路由消费（意图×领域→形态×组件动态组合）· 组件池三机制（归一化/热度/约束映射）· 5 原则 · action-orders.md 15 章协议权威 · 文件层治理（生命周期/守卫 12 检/归档）· 路径归一化（paths/registry）· 插件扩展（plugins/ 热加载）· 回归全绿 · Infoseek 协同 5 维缺口检测 + 混合策略 3 阶段触发'
+display_name: 归零（Quality Control Manual）
+description: '归零（ZerQ）质量管理指导 Skill · 4 层级架构（输出/协议/输入/底层）· 严格分离 · 动作阶段主·时间维度子 · 输出层 4 形态 · 场景路由消费（意图×领域→形态×组件动态组合）· 组件池三机制（归一化/热度/约束映射）· 5 原则 · action-orders.md 15 章协议权威 · 文件层治理（生命周期/守卫 12 检/归档）· 路径归一化（paths/registry）· 插件扩展（plugins/ 热加载）· 回归全绿 · Infoseek 协同 5 维缺口检测 + 混合策略 3 阶段触发'
 author: Forka
 license: Apache-2.0
 entry_point: SKILL.md
@@ -13,7 +13,7 @@ output_validator: core/validator.py
 test_engine: 多引擎回归 + 验证器 全绿
 ---
 
-# 归零（ZeroQ）
+# 归零（ZerQ）
 
 > 对外发布版本：**1.0.1**
 > 中文名「**归零**」源自质量管理的"问题归零 / 双归零"内核——定位、机理、机理延伸、管理归零、技术归零。
@@ -41,7 +41,7 @@ test_engine: 多引擎回归 + 验证器 全绿
 
 ## 1. 这是什么（给你）
 
-归零（ZeroQ）是一个面向**全行业质量管理与问题归零**的指导 Skill。它把"质量危机处置 → 问题归零（双归零）→ 体系治理评估 → 知识沉淀"封装为一套可复用的结构化问题解决流水线。
+归零（ZerQ）是一个面向**全行业质量管理与问题归零**的指导 Skill。它把"质量危机处置 → 问题归零（双归零）→ 体系治理评估 → 知识沉淀"封装为一套可复用的结构化问题解决流水线。
 
 你说清楚「**什么领域、出了什么事、危机到哪一步**」，它会：
 
@@ -127,7 +127,7 @@ python scripts/mcp_server.py --transport http --port 8080
 
 | 变量 | 用途 | 默认 |
 |------|------|------|
-| `QCM_ROOT` | ZeroQ 安装根（路径归一化）| 自身推导 |
+| `QCM_ROOT` | ZerQ 安装根（路径归一化）| 自身推导 |
 | `INFOSEEK_ROOT` | Infoseek 安装根（跨 Skill 协同）| 探测列表 |
 | `QCM_KEYWORDS` | 词库路径覆盖 | references/config/keyword.yaml |
 | `QCM_AUTH_TOKEN` | MCP 认证 Token | — |
@@ -157,7 +157,7 @@ python scripts/mcp_server.py --transport http --port 8080
 | B | 不知该用哪个质量工具 | "想做供应商质量评估，该用哪个工具？" | 工具选型路由 + 决策卡片 |
 | C | 想摸清体系家底 | "帮我们做一次质量管理成熟度评估" | 评估报告（评分→缺口→路线图）|
 | D | 有个好案例想留档 | "把这个客诉案例沉淀成知识库条目" | 案例应用 + 入库（R4R 治理）|
-| E | 怀疑某领域覆盖不足 | "我们半导体行业在 ZeroQ 里覆盖够吗？" | 五维缺口检测 → 触发 Infoseek 协同调研 |
+| E | 怀疑某领域覆盖不足 | "我们半导体行业在 ZerQ 里覆盖够吗？" | 五维缺口检测 → 触发 Infoseek 协同调研 |
 
 > 提示：场景 E 这类"缺口类"请求，当它判定**≥2 维缺口**时会自动进入 Infoseek 归因流程；深层调研（"展开 D"）需要你确认后才执行，不会擅自联网深挖。
 
@@ -285,9 +285,9 @@ python scripts/mcp_server.py --transport http --port 8080
 五维缺口协同：`行业 → 工艺 → 工具 → 方法论 → 大师/思维`（调研深度 1→3）。**≥2 维失败 → 触发 Infoseek 归因**。混合策略三阶段：Phase 1 自动浅层 → Phase 2 关键中层 → Phase 3 用户深层（"展开 D"）。写入策略：置信度 ≥70 入库 / 40–69 归因历史 / <40 终止。
 
 ### 8.4 文件层治理与路径归一化
-- `scripts/paths.py`：ZeroQ 内部路径单一真源（`QCM_ROOT` > `__file__` 推导 > 默认）
+- `scripts/paths.py`：ZerQ 内部路径单一真源（`QCM_ROOT` > `__file__` 推导 > 默认）
 - `scripts/registry.py`：跨 Skill 依赖解析（`INFOSEEK_ROOT` > 探测列表 > 验证 > None）
-- 守卫文件健康⑦⑨：ZeroQ 路径与跨 Skill 路径硬编码零容忍
+- 守卫文件健康⑦⑨：ZerQ 路径与跨 Skill 路径硬编码零容忍
 
 ### 8.5 自动化闭环
 `scripts/word_evolution.sh` 词源自进化闭环（8 段全链路 + ±1H 抖动），由 `automation_manifest.yaml` 登记 5 个定时器（周检/月夜巡/R4 月评/热度回灌/周三孤儿专项）。
@@ -297,7 +297,7 @@ python scripts/mcp_server.py --transport http --port 8080
 ## 9. 兼容性
 
 - **双形态运行**：Skill 形态（Agent 直接加载）与 MCP Server 形态（stdio/http/ws）独立并存
-- **跨生态**：frontmatter 通用字段兼容 Anthropic Claude Skills / CodeBuddy；ZeroQ 增强字段其他宿主宽松忽略
+- **跨生态**：frontmatter 通用字段兼容 Anthropic Claude Skills / CodeBuddy；ZerQ 增强字段其他宿主宽松忽略
 - **Infoseek 可选**：未安装自动降级，不报错
 - **运行时数据**：状态落 `outputs/.runtime/`，技能更新不丢数据
 - **升级方式**：备份 → 替换目录 → 跑 `python3 scripts/sync_manifest.py` + `python3 scripts/config_sync.py --check` 验证
@@ -363,12 +363,12 @@ python scripts/mcp_server.py --transport http --port 8080
 
 ---
 
-> **核心设计原则**：4 层级架构 + 5 原则 + 15 章协议 + 4 形态 + 场景路由消费 + 组件池三机制 + 文件层治理 = 归零（ZeroQ）终极架构。
+> **核心设计原则**：4 层级架构 + 5 原则 + 15 章协议 + 4 形态 + 场景路由消费 + 组件池三机制 + 文件层治理 = 归零（ZerQ）终极架构。
 >
 > **5 原则（Skill 工程设计准则）**：
 > | # | 原则 | 实施 |
 > |---|------|------|
-> | ① | **单一职责** | ZeroQ = 质量管理 · `action-orders.md` = 协议层单一权威 |
+> | ① | **单一职责** | ZerQ = 质量管理 · `action-orders.md` = 协议层单一权威 |
 > | ② | **契约驱动** | MDS 22 字段契约 + `action-orders.md §1–§7` + 4 形态 `input_schema`/`output_schema` |
 > | ③ | **渐进增强** | MDS T1→T2→T3→T4 + 4 形态降级路径（完整 / 部分 / 缺失）|
 > | ④ | **可观测设计** | 8 引擎回归 + 4 形态 `execution_trace` + `qcm_output_validator.py` |
